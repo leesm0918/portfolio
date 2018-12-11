@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8">
+		<title>s. lee's portfolio</title>
+		<link rel="stylesheet" href="css/slick.css" type="text/css">
+		<link rel="stylesheet" href="css/animate.css" type="text/css">
+		<link rel="stylesheet" href="css/animista.css" type="text/css">
+		<link rel="stylesheet" href="css/style.css" type="text/css">
+		<link href="https://fonts.googleapis.com/css?family=Nanum+Gothic" rel="stylesheet">
+		<link href="css/jquery.lineProgressbar.css" rel="stylesheet">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+		<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+		<script type="text/javascript" src="js/slick.min.js"></script>
+		<script src="js/jquery.lineProgressbar.js"></script>
+		<script src="js/wow.min.js"></script>
+              <script>
+              new WOW().init();
+              </script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$(".tab_content").hide();
+				$(".tab_content:first").show();
+
+				$("ul.tabs li").click(function () {
+					$("ul.tabs li").removeClass("active").css("color", "#fff")
+					$(".tab_content").hide()
+				$(this).addClass("active");
+					$(".tab_content").hide()
+					var activeTab = $(this).attr("rel");
+					$("#" + activeTab).fadeIn()
+				});
+				
+				$('#jq').LineProgressbar({
+				  percentage: 97,
+				  duration: 3000,
+				  fillBackgroundColor: '#393687',
+				  backgroundColor: '#EEEEEE',
+				  radius: '4px',
+				  height: '10px',
+				  width: '235px'
+				});
+				$('#jq2').LineProgressbar({
+				  percentage: 90,
+				  duration:	3000,
+				  fillBackgroundColor: '#6d4c13',
+				  backgroundColor: '#EEEEEE',
+				  radius: '4px',
+				  height: '10px',
+				  width: '235px'
+				});
+				$('#jq3').LineProgressbar({
+				  percentage: 95,
+				  duration: 3000,
+				  fillBackgroundColor: '#ec6630',
+				  backgroundColor: '#EEEEEE',
+				  radius: '4px',
+				  height: '10px',
+				  width: '235px'
+				});
+				$('#jq4').LineProgressbar({
+				  percentage: 95,
+				  duration: 3000,
+				  fillBackgroundColor: '#0096e6',
+				  backgroundColor: '#EEEEEE',
+				  radius: '4px',
+				  height: '10px',
+				  width: '235px'
+				});
+				
+				$(window).scroll(function() {    
+					var scroll = $(window).scrollTop();
+					if (scroll >= 500) {
+						$(".header").addClass("change");
+					} else {
+						$(".header").removeClass("change");
+					}
+				});
+				
+				$(".scroll").click(function(event){            
+						event.preventDefault();
+						$('html,body').animate({scrollTop:$(this.hash).offset().top}, 500);
+				});
+				$(window).scroll(function() {
+					if ($(this).scrollTop() > 500) {
+						$('#MOVE_TOP_BTN').fadeIn();
+					} else {
+						$('#MOVE_TOP_BTN').fadeOut();
+					}
+				});
+
+				$("#MOVE_TOP_BTN").click(function() {
+					$('html, body').animate({
+						scrollTop : 0
+					}, 400);
+					return false;
+				});
+				
+				$(".regular").slick({
+					dots: false,
+					fade: true,
+					infinite: true,
+					slidesToShow: 1,
+					slidesToScroll: 1,
+					autoplay: true,
+					autoplaySpeed: 2000,
+					prevArrow: false,
+					nextArrow: false,
+					pauseOnHover: false
+				  });
+			})
+		</script>
+	</head>
+	<body>
+		<!--wrap-->
+		<div id="wrap">
+			<!--header-->
+			<header id="header" class="header">
+				<!--logo-->
+				<h1>
+					<a href="#wrap" class="scroll">logo</a>
+				</h1>
+				<!--/logo-->
+				<!--gnb-->
+				<ul class="gnb cf">
+					<li><a href="#about" class="scroll">about</a></li>
+					<li><a href="#works" class="scroll">works</a></li>
+					<li><a href="#contact" class="scroll">contact</a></li>
+				</ul>
+				<!--/gnb-->
+			</header>
+			<!--/header-->
+			<!--container-->
+			<section id="container">
+				<!--mainRow1-->
+				<div class="mainSlider">
+					<section class="regular slider">
+						<div class="main1">
+							<img src="images/main.png" alt="">
+						</div>
+						<div class="main2">
+							<img src="images/main2.jpg" alt="">
+						</div>
+						<div class="main3">
+							<img src="images/main3.jpg" alt="">
+						</div>
+					</section>
+					<p class="cf" style="animation: text-focus-in 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) 0s 1 normal both running;">
+						<u>PORTFOLIO</u>
+						<i>S.L.'s design studio</i>
+					</p>
+				</div>
+				<div class="mainRow1 cf wow fadeInUp" id="about">
+					<h1>about</h1>
+					<!--myInfo-->
+					<ul class="myInfo">
+						<li><b>이름</b>이승민</li>
+						<li><b>생일</b>1998.9.18</li>
+						<li><b>전화번호</b>010-8603-2523</li>
+						<li><b>메일주소</b>sengmin1998@naver.com</li>
+						<p>
+							<b>부산 더조은직업전문학교<br>스마트(UI/UX)웹디자인&모바일콘텐츠개발 양성과정 수료</b>
+						</p>
+					</ul>
+					<!--/myInfo-->
+					<!--skills-->
+					<div class="skills">
+						<h2>skills</h2>
+						<dl class="graph box1">
+							<dt><img src="images/psdImg.png" alt=""></dt>
+							<dd>
+								<div id="jq"></div>
+								<p>Photoshop</p>
+							</dd>
+						</dl>
+						<dl class="graph box2">
+							<dt><img src="images/aiImg.png" alt=""></dt>
+							<dd>
+								<div id="jq2"></div>
+								<p>Illustrator</p>
+							</dd>
+						</dl>
+						<dl class="graph box3">	
+							<dt><img src="images/htmlImg.png" alt=""></dt>
+							<dd>
+								<div id="jq3"></div>
+								<p>HTML</p>
+							</dd>
+						</dl>
+						<dl class="graph box4">
+							<dt><img src="images/cssImg.png" alt=""></dt>
+							<dd>
+								<div id="jq4"></div>
+								<p>CSS</p>
+							</dd>
+						</dl>
+					</div>
+					<!--skills-->
+				</div>
+				<!--/mainRow1-->
+				<!--mainRow2-->
+				<div class="mainRow2 wow fadeInUp" id="works">
+					<div class="inner">
+						<h1>works</h1>
+						<!--row2Menu-->
+						<ul class="row2Menu cf tabs">
+							<li class="active" rel="tab1">All</li>
+							<li rel="tab2">PC</li>
+							<li rel="tab3">Mobile</li>
+							<li rel="tab4">Responsive</li>
+						</ul>
+						<!--/row2Menu-->
+						<!--webList-->
+						<div class="inner">
+							<ul id="tab1" class="webList cf tab_content">
+								<li>
+									<img src="images/woongjin.png" alt="">
+									<p>웅진식품 리뉴얼 홈페이지(PC)</p>
+								</li>
+								<li>
+									<img src="images/antenna.png" alt="">
+									<p>안테나 리뉴얼 홈페이지(PC)</p>
+								</li>
+								<li>
+									<img src="images/hanhwa.png" alt="">
+									<p>한화그룹 리뉴얼 홈페이지(반응형)</p>
+								</li>
+								<li>
+									<img src="images/11st.png" alt="">
+									<p>11번가 리뉴얼 홈페이지(모바일)</p>
+								</li>
+							</ul>
+							<ul id="tab2" class="webList cf tab_content">
+								<li>
+									<img src="images/woongjin.png" alt="">
+									<p>웅진식품 리뉴얼 홈페이지(PC)</p>
+								</li>
+								<li>
+									<img src="images/antenna.png" alt="">
+									<p>안테나 리뉴얼 홈페이지(PC)</p>
+								</li>
+							</ul>
+							<ul id="tab3" class="webList cf tab_content">
+								<li>
+									<img src="images/11st.png" alt="">
+									<p>11번가 리뉴얼 홈페이지(모바일)</p>
+								</li>
+							</ul>
+							<ul id="tab4" class="webList cf tab_content">
+								<li>
+									<img src="images/hanhwa.png" alt="">
+									<p>한화그룹 리뉴얼 홈페이지(반응형)</p>
+								</li>
+							</ul>
+						</div>
+						<!--/webList-->
+					</div>
+				</div>
+				<!--/mainRow2-->
+				<!--mainRow3-->
+				<div class="mainRow3 inner cf wow fadeInUp" id="contact">
+					<h1>contact</h1>
+					<fieldset>
+						<form action="">
+							<input type="text" value="" class="name" placeholder="name"><br>
+							<input type="email" value="" class="email" placeholder="email"><br>
+							<input type="text" value="" class="subject" placeholder="subject"><br>
+							<textarea name="" id="message" placeholder="message"></textarea><br>
+							<input type="submit" class="submit" value="submit">
+						</form>
+					</fieldset>
+					<img src="images/row3Img.png" alt="">
+				</div>
+				<!--/mainRow3-->
+			</section>
+			<a id="MOVE_TOP_BTN" href="#"><i class="fas fa-arrow-up"></i></a>
+			<!--/container-->
+			<!--footer-->
+			<footer id="footer">
+				<!--footerCon-->
+				<div class="footerTop">
+					<div class="inner">
+						<ul class="footerCon cf">
+							<li>
+								<a href="">
+									<img src="images/phoneIcon.png" alt="">
+									<span>010-8603-2523</span>
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<img src="images/talkIcon.png" alt="">
+									<span>leesm0918</span>
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<img src="images/mailIcon.png" alt="">
+									<span>sengmin1998@naver.com</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<!--/footerCon-->
+				<!--footerCopy-->
+				<div class="footerCopy">
+					<div class="inner">
+						<span>Copyright 2018. Seungmin Lee. All rights reserved.</span>
+					</div>
+				</div>
+				<!--/footerCopy-->
+			</footer>
+			<!--/footer-->
+		</div>
+		<!--/wrap-->
+	</body>
+</html>
