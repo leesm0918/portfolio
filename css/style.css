@@ -5,6 +5,7 @@ body,h1,h2,h3,h4,h5,h6,p,dl,dd{
 body{
 	font-family: 'Nanum Gothic', sans-serif;
 	min-width: 1000px;
+	color: #2c2c2c;
 }
 ul{
 	margin: 0;
@@ -62,7 +63,7 @@ fieldset{
 .gnb{
 	float: right;
 	margin-top: 30px;
-	margin-right: 100px;
+	margin-right: 50px;
 }
 .gnb li{
 	float: left;
@@ -115,7 +116,7 @@ fieldset{
 	margin-top: -50px;
 	margin-bottom: 100px;
 }
-.mainRow1 h1:after,.mainRow3 h1:after{
+.mainRow1 h1:after,.mainRow3 h1:after,.mainRow4 h1:after{
 	margin-top: 15px;
 	content: "";
 	width: 30px;
@@ -274,9 +275,36 @@ h2:after {
 .webList li p{
 	margin-top: 30px;
 }
+
+/*mainRow4*/
+.mainRow4{
+	padding: 150px 0;
+}
+.mainRow4 h1{
+	text-align: center;
+	margin-bottom: 100px;
+}
+.albumList{
+	width: 100%;
+}
+.albumList li{
+	float: left;
+	width: 20%;
+	margin: 0 2.5%;
+	margin-bottom: 50px;
+	border: 1px solid #e1e1e1;
+	box-sizing: border-box;
+}
+.albumList li:hover{
+	border: 1px solid #222;
+}
+.albumList li img{
+	width: 100%;
+}
+
+/*mainRow3*/
 .mainRow3{
 	padding: 150px 0;
-	background: #fff;
 }
 .mainRow3 h1{
 	text-align: center;
