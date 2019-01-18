@@ -6,6 +6,7 @@ body{
 	font-family: 'Nanum Gothic', sans-serif;
 	min-width: 1000px;
 	color: #2c2c2c;
+	background-color: #f6f5f6;
 }
 ul{
 	margin: 0;
@@ -41,32 +42,41 @@ h1{
 
 /*header*/
 #header{
-	padding: 20px 30px;
-	position: fixed;
+    position: fixed;
 	top: 0;
+    height:100px;
+    z-index: 10;
 	width: 100%;
-	z-index: 10;
+    box-sizing: border-box;
+    transition: height 0.3s;
+    background: #fff;
+}
+#header.nav-down{
+    height:100px;
+}
+#header.nav-up{
+    height:0;
+    overflow:hidden;
 }
 #header h1{
-	float: left;;
-	width: 60px;
-	height: 60px;
+	width: 75px;
+	height: 70px;
 	background: url(../images/logo.png) no-repeat;
-	background-size: cover;
+	background-size: 100%;
 	text-indent: -9999px;
+    float: left;
+    margin-top:15px;
+    margin-left:30px;
 }
 #header h1 a{
 	height: 100%;
 	display: block;
 }
-.change{
-	height: 70px;
-    background-color: rgba(0,0,0,0.3);
-}
 .gnb{
-	float: right;
-	margin-top: 30px;
-	margin-right: 50px;
+    height: 100px;
+    line-height: 100px;
+    float: right;
+    margin-right:30px;
 }
 .gnb li{
 	float: left;
@@ -79,41 +89,29 @@ h1{
 	text-decoration: underline;
 }
 .gnb li a{
-	color: #fff;
+	color: #2c2c2c;
 }
 
 /*container*/
-#section{}
-.mainSlider{
-	overflow: hidden;
+.mainTitle{
+    z-index: 3;
+    height: 1000px;
 	position: relative;
+    background: url(../images/main.png) no-repeat center center;
 }
-.mainSlider img{
-	width: 100%;
-	filter: brightness(80%);
+.mainTitle p{
+    position: absolute;
+    font-size: 32px;
+    letter-spacing: 10px;
+    top: 800px;
+    left: 50%;
+    transform: translate(-50%);
 }
 
-.mainSlider p{
-	position: absolute;
-	top: 50%;
-	right: 100px;
-	color: #fff;
-	text-shadow: 2px 2px 2px rgba(0,0,0,0.5);
-}
-.mainSlider p u{
-	font-size: 70px;
-	letter-spacing: 1px;
-	display: block;
-	text-decoration: none;
-}
-.mainSlider p i{
-	float: right;
-	margin-top: 10px;
-}
+/*mainRow1*/
 .mainRow1{
-	background: url(../images/dT16Fvz.png) no-repeat;
-	background-size: cover;
 	padding: 200px 0;
+    position: relative;
 }
 .mainRow1 h1{
 	text-align: center;
@@ -131,68 +129,39 @@ h1{
 	left: 50%;
 	transform: translate(-50%);
 }
-.myInfo{
-	margin-top: 40px;
-	float: left;
+.profileBox{
+    background: #fff;
+    padding: 50px;
+    border-radius: 10px;
 }
-.myInfo li{
-	margin-bottom: 30px;
+.profileBox h2{
+    margin-bottom: 60px;
 }
-.myInfo li b{
-	display: inline-block;
-	width: 100px;
+.profile{}
+.profile ul{}
+.profile ul li{
+    text-indent: 10px;
+    margin-bottom: 50px;
 }
-.myInfo p{
-	margin-top: 50px;
+.profile ul li span{
+    display: inline-block;
+    width: 200px;
+    font-weight: bold;
 }
-.skills{
-	position: relative;
-	float: right;
-	width: 350px;
-	border: 2px solid #000;
-	border-top: 0;
-	padding-bottom: 20px;
+.profile img{}
+.skills{}
+.skills ul{
+    font-size: 0;
+    text-align: center;
 }
-.skills h2{
-	overflow: hidden;
-	text-align: center;
-	position: relative;
-	top: -15px;
+.skills ul li{
+    display: inline-block;
+    margin-right: 50px;
 }
-.skills h2:after,.skills h2:before{
-	content: "";
-	width: 50%;
-	height: 2px;
-	display: inline-block;
-	background: #000;
-	position: relative;
-    vertical-align: middle;	
+.skills ul li:last-child{
+    margin: 0;
 }
-h2:before {
-    right: 30px;
-    margin-left: -50%;
-}
-h2:after {
-    left: 30px;
-    margin-right: -50%;
-}
-.graph{
-	padding: 10px 30px;
-}
-.graph:last-child{
-	margin-bottom: 0;
-}
-.graph dt{
-	display: inline-block;
-}
-.graph dt img{
-	width: 40px;
-}
-.graph dd{
-	display: inline-block;
-	margin-left: 10px;
-}
-.graph dd p{}
+.skills ul li img{}
 
 /*mainRow2*/
 .mainRow2{
@@ -201,12 +170,12 @@ h2:after {
 }
 .mainRow2:after{
 	background: url(../images/work-731198_1920.jpg) no-repeat fixed;
-	top:0;
-    left:0;
-    position:absolute;
     background-size: cover;
-	filter: brightness(20%);
-	opacity: 0.8;
+	filter: blur(2px);
+	filter: brightness(40%);
+	top: 0;
+    left: 0;
+    position: absolute;
     z-index: -1;
     content: "";
     width: 100%;
@@ -251,7 +220,7 @@ h2:after {
 	background: #444;
 }
 .row2Menu li.active{
-	background-color: #333;
+	background-color: #2c2c2c;
 }
 .row2Menu li:first-child{
 	border-top-left-radius: 25px;
@@ -264,13 +233,15 @@ h2:after {
 }
 .webList{
 	width: 100%;
+	font-size: 0;
+	text-align: center;
 }
 .webList li{
 	width: 25%;
-	float: left;
-	text-align: center;
+	display: inline-block;
 }
 .webList li a{
+	font-size: 16px;
 	color: #fff;
 }
 .webList li img{
@@ -282,6 +253,7 @@ h2:after {
 
 /*mainRow4*/
 .mainRow4{
+	display: none;
 	padding: 150px 0;
 }
 .mainRow4 h1{
@@ -309,52 +281,62 @@ h2:after {
 /*mainRow3*/
 .mainRow3{
 	padding: 150px 0;
+	position: relative;
 }
 .mainRow3 h1{
 	text-align: center;
 	margin-bottom: 100px;
 }
+.mainRow3 img{}
 .mainRow3 fieldset{
-	float: left;
+	position: absolute;
+	background: #f9f9f9;
+	top: 40%;
+	left: 40%;
+	padding: 50px;
+}
+.formWrap{
+	display: inline-block;
+	vertical-align: middle;
+	margin-right: 50px;
 }
 .name,.email,.subject{
 	width: 400px;
 	height: 30px;
-	border: 2px solid #000;
-	margin-bottom: 35px;
+	border: none;
+	border-bottom: 1px solid #777;
+	margin-bottom: 30px;
 }
-.name{}
-.email{}
-.subject{}
 #message{
+	border: none;
+	border-bottom: 1px solid #777;
 	width: 396px;
 	height: 100px;
-	border: 2px solid #000;
-	margin-bottom: 20px;
+}
+.submitWrap{
+	display: inline-block;
+	vertical-align: middle;
 }
 .submit{
-	width: 200px;
-	height: 50px;
+	width: 80px;
+	height: 298px;
 	font-size: 20px;
+	font-weight: bold;
+	letter-spacing: 1px;
+	color: #fff;
 	font-family: 'Nanum Gothic', sans-serif;
-	background: #fff;
-	border: 2px solid #000;
+	background: #333;
+	border: none;
+	border-radius: 10px;
 	cursor: pointer;
-	position: relative;
-	left: 50%;
-	transform: translate(-50%);
-}
-.mainRow3 img{
-	width: 400px;
-	float: right;
 }
 input::placeholder{
-	color: #000;
+	color: #2c2c2c;
 	padding-left: 10px;
 }
 textarea::placeholder{
 	font-family: 'Nanum Gothic', sans-serif;
-	color: #000;
+	color: #2c2c2c;
 	padding: 2px 0 0 10px;;
 }
 
@@ -386,7 +368,7 @@ a#MOVE_TOP_BTN i{
 	background: #aaa;
 }
 .footerCon{
-	padding: 10px 0;
+	padding: 20px 0;
 	width: 100%;
 }
 .footerCon li{
@@ -395,7 +377,8 @@ a#MOVE_TOP_BTN i{
 	text-align: center;
 }
 .footerCon li a{
-	color: #333;
+	font-weight: bold;
+	color: #2c2c2c;
 	font-size: 14px;
 }
 .footerCon li a img{
@@ -407,7 +390,7 @@ a#MOVE_TOP_BTN i{
 	vertical-align: middle;
 }
 .footerCopy{
-	padding: 10px 0;
+	padding: 20px 0;
 	background: #444;
 	text-align: center;
 }
